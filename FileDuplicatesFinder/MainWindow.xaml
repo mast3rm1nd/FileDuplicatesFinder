@@ -1,0 +1,17 @@
+﻿<Window x:Class="FileDuplicatesFinder.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FileDuplicatesFinder"
+        mc:Ignorable="d"
+        Title="Duplicates Finder" Height="350" Width="525" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label x:Name="label" Content="Where to look:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="SpecifyPath_button" Content="..." HorizontalAlignment="Left" Margin="102.927,13,0,0" VerticalAlignment="Top" Width="67.073" Click="SpecifyPath_button_Click"/>
+        <Label x:Name="Path_label" Content="" HorizontalAlignment="Left" Margin="175,10,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Results_textBox" Margin="10,67,10,10" TextWrapping="Wrap" IsReadOnly="True" VerticalScrollBarVisibility="Auto"/>
+        <Button x:Name="Go_button" Content="Go!" Margin="10,40.96,10,0" VerticalAlignment="Top" Click="Go_button_Click"/>
+
+    </Grid>
+</Window>
