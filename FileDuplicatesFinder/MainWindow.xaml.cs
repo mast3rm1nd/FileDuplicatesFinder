@@ -46,7 +46,7 @@ namespace FileDuplicatesFinder
             var filesToWorkWith = FilesHelper.GetAllFilesFromDirectory_Recursively(path);
 
 
-            var filePathsAndHashes = new Dictionary<string, string>();
+            
 
             var thread = new Thread(new ThreadStart(() =>
             {
@@ -54,36 +54,60 @@ namespace FileDuplicatesFinder
                 {
                     Go_button.Content = "In progress...";
                     Go_button.IsEnabled = false;
+
+                    Results_textBox.Text = "";
                 }));
 
-                    foreach (var filePah in filesToWorkWith)
+
+                var filePathsAndSizes = new Dictionary<string, long>();
+                foreach (var filePah in filesToWorkWith)
                 {
-                    filePathsAndHashes[filePah] = GetChecksum(filePah);
+                    filePathsAndSizes[filePah] = new FileInfo(filePah).Length;
                 }
 
-                var grouped = filePathsAndHashes.GroupBy(x => x.Value)
+                var groupedBySize = filePathsAndSizes.GroupBy(x => x.Value)
                     .ToDictionary(
                     x => x.Key,
                     x => x.Select(i => i.Key).ToList())
                     .Where(x => x.Value.Count > 1).ToArray();
 
-                if (grouped.Length == 0)
+                if (groupedBySize.Length == 0)
                 {
-                    Dispatcher.BeginInvoke(new Action(delegate
+                    NoDupes();
+
+                    return;
+                }
+
+
+
+
+                var filePathsAndHashes = new Dictionary<string, string>();
+                foreach(var groupedBySizeSubgroup in groupedBySize)
+                {
+                    foreach (var filePath in groupedBySizeSubgroup.Value)
                     {
-                        Results_textBox.Text = "No duplicates were found.";
+                        filePathsAndHashes[filePath] = GetChecksum(filePath);
+                    }
+                }
 
-                        Go_button.Content = "Go!";
-                        Go_button.IsEnabled = true;
-                    }));
+                
 
+                var groupedByChecksum = filePathsAndHashes.GroupBy(x => x.Value)
+                    .ToDictionary(
+                    x => x.Key,
+                    x => x.Select(i => i.Key).ToList())
+                    .Where(x => x.Value.Count > 1).ToArray();
+
+                if (groupedByChecksum.Length == 0)
+                {
+                    NoDupes();
 
                     return;
                 }
 
                 var sb = new StringBuilder();
 
-                foreach (var dupes in grouped)
+                foreach (var dupes in groupedByChecksum)
                 {
                     sb.Append($"{dupes.Key}:{Environment.NewLine}{string.Join(Environment.NewLine, dupes.Value.ToArray())}{Environment.NewLine}{Environment.NewLine}");
                 }
@@ -102,7 +126,16 @@ namespace FileDuplicatesFinder
             thread.Start();
         }
 
+        private void NoDupes()
+        {
+            Dispatcher.BeginInvoke(new Action(delegate
+            {
+                Results_textBox.Text = "No duplicates were found.";
 
+                Go_button.Content = "Go!";
+                Go_button.IsEnabled = true;
+            }));
+        }
 
         private static string GetChecksum(string file)
         {

@@ -11,3 +11,16 @@ C:\Users\Администратор\Dropbox\!Coding\All_in_one\FileDuplicatesFin
 C:\Users\Администратор\Dropbox\!Coding\All_in_one\FileDuplicatesFinder\FileDuplicatesFinder\obj\Debug\FileDuplicatesFinder.csproj.GenerateResource.Cache
 C:\Users\Администратор\Dropbox\!Coding\All_in_one\FileDuplicatesFinder\FileDuplicatesFinder\obj\Debug\FileDuplicatesFinder.exe
 C:\Users\Администратор\Dropbox\!Coding\All_in_one\FileDuplicatesFinder\FileDuplicatesFinder\obj\Debug\FileDuplicatesFinder.pdb
+F:\Dropbox\!Coding\All_in_one\FileDuplicatesFinder\FileDuplicatesFinder\obj\Debug\FileDuplicatesFinder.exe
+F:\Dropbox\!Coding\All_in_one\FileDuplicatesFinder\FileDuplicatesFinder\obj\Debug\FileDuplicatesFinder.pdb
+F:\Dropbox\!Coding\All_in_one\FileDuplicatesFinder\FileDuplicatesFinder\bin\Debug\FileDuplicatesFinder.exe
+F:\Dropbox\!Coding\All_in_one\FileDuplicatesFinder\FileDuplicatesFinder\bin\Debug\FileDuplicatesFinder.pdb
+F:\Dropbox\!Coding\All_in_one\FileDuplicatesFinder\FileDuplicatesFinder\obj\Debug\FileDuplicatesFinder.csprojResolveAssemblyReference.cache
+F:\Dropbox\!Coding\All_in_one\FileDuplicatesFinder\FileDuplicatesFinder\obj\Debug\MainWindow.g.cs
+F:\Dropbox\!Coding\All_in_one\FileDuplicatesFinder\FileDuplicatesFinder\obj\Debug\App.g.cs
+F:\Dropbox\!Coding\All_in_one\FileDuplicatesFinder\FileDuplicatesFinder\obj\Debug\FileDuplicatesFinder_MarkupCompile.cache
+F:\Dropbox\!Coding\All_in_one\FileDuplicatesFinder\FileDuplicatesFinder\obj\Debug\FileDuplicatesFinder_MarkupCompile.lref
+F:\Dropbox\!Coding\All_in_one\FileDuplicatesFinder\FileDuplicatesFinder\obj\Debug\MainWindow.baml
+F:\Dropbox\!Coding\All_in_one\FileDuplicatesFinder\FileDuplicatesFinder\obj\Debug\FileDuplicatesFinder.g.resources
+F:\Dropbox\!Coding\All_in_one\FileDuplicatesFinder\FileDuplicatesFinder\obj\Debug\FileDuplicatesFinder.Properties.Resources.resources
+F:\Dropbox\!Coding\All_in_one\FileDuplicatesFinder\FileDuplicatesFinder\obj\Debug\FileDuplicatesFinder.csproj.GenerateResource.Cache
